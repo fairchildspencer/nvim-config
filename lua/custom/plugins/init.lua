@@ -9,4 +9,6 @@ return {
   require 'custom.plugins.lualine',
 
   require 'custom.plugins.oil',
+
+  require 'custom.plugins.harpoon',
 }
