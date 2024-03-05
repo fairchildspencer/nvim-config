@@ -94,15 +94,7 @@ return {
         cssls = {},
         ruby_ls = {},
         tsserver = {},
-        volar = {
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-          init_options = {
-            -- use a gloabl installation of typescript to not worry about repo versioning
-            typescript = {
-              tsdk = '/opt/homebrew/lib/node_modules/typescript/lib',
-            },
-          },
-        },
+        vuels = {},
         gopls = {
           cmd = { 'gopls' },
           filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
@@ -146,11 +138,10 @@ return {
         'stylua',
         'css-lsp',
         'html-lsp',
-        'prettierd',
         'typescript-language-server',
+        'eslint_d',
         'ruby-lsp',
         'vue-language-server',
-        'rubocop',
         'golines',
         'goimports-reviser',
         'gofumpt',
