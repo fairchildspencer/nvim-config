@@ -11,4 +11,6 @@ return {
   require 'custom.plugins.oil',
 
   require 'custom.plugins.harpoon',
+
+  require 'lua.custom.plugins.alpha',
 }
