@@ -12,5 +12,5 @@ return {
 
   require 'custom.plugins.harpoon',
 
-  require 'lua.custom.plugins.alpha',
+  require 'custom.plugins.alpha',
 }
