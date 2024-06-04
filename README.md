@@ -41,5 +41,5 @@ brew install node
 
 Clone the config
 ```sh
-git clone https://github.com/fairchildspencer/nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone git@github.com:fairchildspencer/nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
