@@ -92,17 +92,9 @@ return {
       local servers = {
         html = {},
         cssls = {},
-        ruby_ls = {},
+        solargraph = {},
         tsserver = {},
-        volar = {
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-          init_options = {
-            -- use a gloabl installation of typescript to not worry about repo versioning
-            typescript = {
-              tsdk = '/opt/homebrew/lib/node_modules/typescript/lib',
-            },
-          },
-        },
+        vuels = {},
         gopls = {
           cmd = { 'gopls' },
           filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
@@ -141,16 +133,17 @@ return {
       -- Ensure the servers and tools above are installed
       require('mason').setup()
 
+      vim.cmd [[autocmd FileType ruby setlocal indentkeys-=.]] -- INFO: Fix stupid ruby indent on period issue
+
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
         'css-lsp',
         'html-lsp',
-        'prettierd',
         'typescript-language-server',
-        'ruby-lsp',
+        'eslint_d',
+        'solargraph',
         'vue-language-server',
-        'rubocop',
         'golines',
         'goimports-reviser',
         'gofumpt',

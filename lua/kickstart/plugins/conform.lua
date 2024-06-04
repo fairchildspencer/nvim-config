@@ -5,14 +5,18 @@ return {
       require('conform').setup {
         notify_on_error = false,
         format_on_save = {
-          timeout_ms = 500,
+          timeout_ms = 1500,
           lsp_fallback = true,
         },
         formatters_by_ft = {
           lua = { 'stylua' },
           go = { 'gofumpt', 'goimports_reviser', 'golines' },
-          vue = { { 'prettierd', 'volar' } },
-          javascript = { { 'prettierd', 'prettier' } },
+          javascript = { 'eslint_d' },
+          css = { 'eslint_d' },
+          html = { 'eslint_d' },
+          vue = { 'eslint_d' },
+
+          ruby = { 'rubocop' },
         },
       }
 
