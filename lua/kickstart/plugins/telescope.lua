@@ -26,7 +26,8 @@ return {
             n = { ['q'] = require('telescope.actions').close },
           },
           sorting_strategy = 'ascending',
-          layout_strategy = 'horizontal',
+          selection_strategy = 'reset',
+          path_display = { 'truncate' },
           layout_config = {
             horizontal = {
               prompt_position = 'top',
@@ -64,6 +65,7 @@ return {
       vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
       vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = '[F]ind [O]ld Files' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>fz', builtin.current_buffer_fuzzy_find, { desc = '[F]u[Z]zily search current buffer' })
 
       vim.keymap.set('n', '<leader>fa', function()
         builtin.find_files {
@@ -72,13 +74,6 @@ return {
           hidden = true,
         }
       end, { desc = '[F]ind [A]ll files' })
-
-      vim.keymap.set('n', '<leader>fz', function()
-        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
-          previewer = false,
-        })
-      end, { desc = '[F]u[Z]zily search current buffer' })
 
       -- Shortcut for searching your neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()

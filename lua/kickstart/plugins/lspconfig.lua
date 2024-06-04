@@ -92,7 +92,7 @@ return {
       local servers = {
         html = {},
         cssls = {},
-        ruby_ls = {},
+        solargraph = {},
         tsserver = {},
         vuels = {},
         gopls = {
@@ -133,6 +133,8 @@ return {
       -- Ensure the servers and tools above are installed
       require('mason').setup()
 
+      vim.cmd [[autocmd FileType ruby setlocal indentkeys-=.]] -- INFO: Fix stupid ruby indent on period issue
+
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
@@ -140,7 +142,7 @@ return {
         'html-lsp',
         'typescript-language-server',
         'eslint_d',
-        'ruby-lsp',
+        'solargraph',
         'vue-language-server',
         'golines',
         'goimports-reviser',
