@@ -15,4 +15,8 @@ return {
   require 'custom.plugins.alpha',
 
   require 'custom.plugins.lint',
+
+  require 'custom.plugins.codeium',
+
+  require 'custom.plugins.undo',
 }

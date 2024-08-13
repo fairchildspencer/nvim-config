@@ -9,7 +9,7 @@ return {
       harpoon:setup()
 
       vim.keymap.set('n', '<leader>a', function()
-        harpoon:list():append()
+        harpoon:list():add()
       end, { desc = 'Append buffer to Harpoon list' })
       vim.keymap.set('n', '<leader>h', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())

@@ -92,7 +92,6 @@ return {
       local servers = {
         html = {},
         cssls = {},
-        solargraph = {},
         tsserver = {},
         vuels = {},
         gopls = {
@@ -142,7 +141,6 @@ return {
         'html-lsp',
         'typescript-language-server',
         'eslint_d',
-        'solargraph',
         'vue-language-server',
         'golines',
         'goimports-reviser',
