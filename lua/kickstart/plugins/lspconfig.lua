@@ -94,6 +94,21 @@ return {
         cssls = {},
         tsserver = {},
         vuels = {},
+        rust_analyzer = {
+          settings = {
+            ['rust-analyzer'] = {
+              check = {
+                command = 'clippy',
+              },
+              diagnostics = {
+                enable = true,
+              },
+              cargo = {
+                allFeatures = true,
+              },
+            },
+          },
+        },
         gopls = {
           cmd = { 'gopls' },
           filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
@@ -145,6 +160,7 @@ return {
         'golines',
         'goimports-reviser',
         'gofumpt',
+        'rust-analyzer',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
