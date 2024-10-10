@@ -92,7 +92,7 @@ return {
       local servers = {
         html = {},
         cssls = {},
-        tsserver = {},
+        ts_ls = {},
         vuels = {},
         rust_analyzer = {
           settings = {
