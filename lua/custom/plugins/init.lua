@@ -19,4 +19,10 @@ return {
   require 'custom.plugins.codeium',
 
   require 'custom.plugins.undo',
+
+  require 'custom.plugins.snacks',
+
+  require 'custom.plugins.markdown',
+
+  require 'custom.plugins.grug',
 }
