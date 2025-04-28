@@ -94,6 +94,24 @@ return {
         cssls = {},
         ts_ls = {},
         vuels = {},
+        clangd = (function()
+          local clangd_cmd = {
+            'clangd',
+            '--background-index',
+            '--clang-tidy',
+            '--completion-style=detailed',
+            '--header-insertion=iwyu',
+          }
+
+          local build_dir = vim.fn.getcwd() .. '/build'
+          if vim.fn.isdirectory(build_dir) == 1 then
+            table.insert(clangd_cmd, '--compile-commands-dir=build')
+          end
+
+          return {
+            cmd = clangd_cmd,
+          }
+        end)(),
         rust_analyzer = {
           settings = {
             ['rust-analyzer'] = {
@@ -161,6 +179,7 @@ return {
         'goimports-reviser',
         'gofumpt',
         'rust-analyzer',
+        'clangd',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
