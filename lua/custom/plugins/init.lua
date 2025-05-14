@@ -25,4 +25,6 @@ return {
   require 'custom.plugins.markdown',
 
   require 'custom.plugins.grug',
+
+  require 'custom.plugins.presenting',
 }
